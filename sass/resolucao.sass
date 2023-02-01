@@ -139,3 +139,24 @@ header
         width: 30%
     
 
+// Exercício 3 - @extend
+// Crie um estilo para botões que contenha:
+
+// Padding;
+// Border width;
+// Border style;
+// Border radius.
+// Use @extend para herdar as propriedades deste estilo no .btn-follow.
+
+.btn
+    padding: 2rem
+    border:
+        width: 3px
+        style: solid
+        radius:3px
+    &:hover
+        color:$color-blue        
+
+.btn-follow
+    @extend .btn
+    background-color: red

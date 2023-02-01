@@ -132,4 +132,17 @@ header .links li {
   .photos li {
     width: 30%;
   }
+}
+.btn, .btn-follow {
+  padding: 2rem;
+  border-width: 3px;
+  border-style: solid;
+  border-radius: 3px;
+}
+.btn:hover, .btn-follow:hover {
+  color: #3897f0;
+}
+
+.btn-follow {
+  background-color: red;
 }/*# sourceMappingURL=resolucao.css.map */

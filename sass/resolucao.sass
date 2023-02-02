@@ -2,6 +2,13 @@ $color-background: #fafafa
 $color-blue: #3897f0
 $font: "font"
 
+
+
+@mixin border-box($border)
+    -webkit-border-radius: $border
+    -moz-border-radius: $border
+    border-radius: $border
+    
 /*     * 
  margin: 0;
  padding: 0;
@@ -40,9 +47,7 @@ header
     flex-flow: column
 
 header .avatar
-    -webkit-border-radius: 50%
-    -moz-border-radius: 50%
-    border-radius: 50%
+    @include border-box(50%)
     margin: 0 auto
 
 header .desc
@@ -77,9 +82,7 @@ header
         style: solid
         color: $color-blue
     color: $color-blue
-    -webkit-border-radius: calc(4px / 16px)+rem
-    -moz-border-radius: calc(4px / 16px)+rem
-    border-radius: calc(4px / 16px)+rem
+    @include border-box(calc(4px / 16px)+rem)
 
 .btn-follow:hover
     background: $color-background
@@ -142,4 +145,3 @@ header
 .btn-follow
     @extend .btn
     background-color: red
- 

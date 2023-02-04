@@ -2,20 +2,17 @@ $color-background: #fafafa
 $color-blue: #3897f0
 $font: "font"
 
-
 // usando mixins
 
 @mixin border-box($border)
     -webkit-border-radius: $border
     -moz-border-radius: $border
     border-radius: $border
-    
-// usando funções 
 
+// usando funções 
 
 @function PxToRem($num1, $num2)
     @return calc($num1 / $num2) + rem
-
 
 html
     font-size: PxToRem(15 , 15)
@@ -43,7 +40,7 @@ main
 
 header
     display: flex
-    margin: PxToRem( 30 , 16 ),  0
+    margin: PxToRem( 30 , 16 ), 0
     flex-flow: column
 
 header .avatar
@@ -71,7 +68,7 @@ header
         margin: PxToRem( 10, 16 )
         li
             list-style: none
-            margin: 0 PxToRem( 20, 16 )  0 0
+            margin: 0 PxToRem( 20, 16 ) 0 0
             display: inline-block
 
 .btn-follow
@@ -145,3 +142,14 @@ header
 .btn-follow
     @extend .btn
     background-color: red
+
+// usando diretrizes @if And @else
+
+p
+    $template: vulcao
+    @if $template == vulcao
+        color: red
+    @else if $template == lava
+        color: tomato
+    @else
+        color: blue

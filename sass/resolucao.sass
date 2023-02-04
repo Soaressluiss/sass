@@ -3,22 +3,22 @@ $color-blue: #3897f0
 $font: "font"
 
 
+// usando mixins
 
 @mixin border-box($border)
     -webkit-border-radius: $border
     -moz-border-radius: $border
     border-radius: $border
     
-/*     * 
- margin: 0;
- padding: 0;
- -webkit-box-sizing: border-box;
- -moz-box-sizing: border-box;
- box-sizing: border-box;
- */
+// usando funções 
+
+
+@function PxToRem($num1, $num2)
+    @return calc($num1 / $num2) + rem
+
 
 html
-    font-size: calc(16px/16px) +rem
+    font-size: PxToRem(15 , 15)
 
 ul
     padding: 0
@@ -38,12 +38,12 @@ body
 
 main
     width: 90%
-    max-width: calc(935px/16px) + rem
+    max-width: PxToRem(935 ,16 )
     margin: 0 auto
 
 header
     display: flex
-    margin: calc( 30px / 16px ) +rem 0
+    margin: PxToRem( 30 , 16 ),  0
     flex-flow: column
 
 header .avatar
@@ -57,32 +57,32 @@ header
     h1,
     h2
         display: inline-block
-        margin: calc( 10px / 16px ) +rem 0
+        margin: PxToRem( 10, 16 ), 0
 
 header h1
-    font-size: calc( 28px / 16px ) +rem
+    font-size: PxToRem( 28, 16 )
 
 header h2
-    font-size: calc( 24px / 16px ) +rem
+    font-size: PxToRem( 24 , 16 )
 
 header
     .links
         list-style: none
-        margin: calc( 10px / 16px ) +rem 0
+        margin: PxToRem( 10, 16 )
         li
             list-style: none
-            margin: 0 calc( 20px / 16px ) +rem 0 0
+            margin: 0 PxToRem( 20, 16 )  0 0
             display: inline-block
 
 .btn-follow
-    margin: 0 calc(20px / 16px) +rem
-    padding: calc(6px / 16px)+rem calc(14px / 16px)+rem
+    margin: 0 PxToRem(20, 16)
+    padding: PxToRem(6, 16) PxToRem(14, 6)
     border:
-        width: calc(1px / 16px)+rem
+        width: PxToRem(1 , 16)
         style: solid
         color: $color-blue
     color: $color-blue
-    @include border-box(calc(4px / 16px)+rem)
+    @include border-box(PxToRem(4 , 16))
 
 .btn-follow:hover
     background: $color-background
@@ -95,7 +95,7 @@ header
     display: flex
     li
         width: 100%
-        margin: calc(16px / 16px)+rem
+        margin: PxToRem(16, 16)
         position: relative
         img
             width: 100%
@@ -118,7 +118,7 @@ header
     header
         flex-flow: row
         .avatar
-            margin: 0 calc(20px / 16px)+rem
+            margin: 0 PxToRem(20, 16)
         .desc
             text-align: left
     .photos li
@@ -136,9 +136,9 @@ header
 .btn
     padding: 2rem
     border:
-        width: calc(3px / 16px)+rem
+        width: PxToRem(3, 16)
         style: solid
-        radius: calc(3px / 16px)+rem
+        radius: PxToRem(3, 16)
     &:hover
         color: $color-blue
 

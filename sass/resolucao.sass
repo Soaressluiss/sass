@@ -153,3 +153,14 @@ p
         color: tomato
     @else
         color: blue
+
+
+
+// usando each para percorer um lista 
+    
+$animais: dog, cat, bird, fish
+
+
+@each $animal in $animais
+    .comida-#{$animal}
+        background-image: url(/#{$animal}.png)

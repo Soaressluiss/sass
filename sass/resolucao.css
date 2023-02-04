@@ -142,4 +142,20 @@ header .links li {
 
 p {
   color: red;
+}
+
+.comida-dog {
+  background-image: url(/dog.png);
+}
+
+.comida-cat {
+  background-image: url(/cat.png);
+}
+
+.comida-bird {
+  background-image: url(/bird.png);
+}
+
+.comida-fish {
+  background-image: url(/fish.png);
 }/*# sourceMappingURL=resolucao.css.map */
